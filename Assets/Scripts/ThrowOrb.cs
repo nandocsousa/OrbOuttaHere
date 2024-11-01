@@ -12,6 +12,15 @@ public class ThrowOrb : MonoBehaviour
 
     public bool isAlive = false;
 
+    private GameObject canvas;
+    private MovesCounter movesCounter;
+
+    private void Start()
+    {
+        canvas = GameObject.FindWithTag("Canvas");
+        movesCounter = canvas.GetComponent<MovesCounter>();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -20,10 +29,12 @@ public class ThrowOrb : MonoBehaviour
             {
                 CloneAndThrow();
             }
-            else
+            else if (movesCounter.CanMove())
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 currentDirection = (targetPosition - cloneOrb.position).normalized;
+
+                movesCounter.IncrementMoves();
             }
         }
     }
@@ -39,10 +50,15 @@ public class ThrowOrb : MonoBehaviour
     void CloneAndThrow()
     {
         cloneOrb = Instantiate(orbPrefab, transform.position, Quaternion.identity);
+
         targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         currentDirection = (targetPosition - (Vector2)transform.position).normalized;
+
         cloneOrb.velocity = (targetPosition - (Vector2)transform.position).normalized * speed;
+
         isAlive = true;
+
+        movesCounter.IncrementMoves();
     }
 
     void MoveOrbTowardsTarget()
