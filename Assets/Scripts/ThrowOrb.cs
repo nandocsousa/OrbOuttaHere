@@ -5,7 +5,7 @@ public class ThrowOrb : MonoBehaviour
     public Rigidbody2D orbPrefab;
     private Rigidbody2D cloneOrb;
 
-    private float speed = 8f;
+    public float speed = 7f;
 
     private Vector2 targetPosition;
     private Vector2 currentDirection;

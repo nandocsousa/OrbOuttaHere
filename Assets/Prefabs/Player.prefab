@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbPrefab: {fileID: 7982461018497421412, guid: 12aa6d653ea74ab4595fe2774244112f, type: 3}
+  speed: 7
   isAlive: 0
 --- !u!50 &7901442570983090847
 Rigidbody2D:
