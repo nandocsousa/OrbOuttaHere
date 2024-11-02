@@ -13,7 +13,7 @@ public class OrbController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Platform") || collision.CompareTag("Spike"))
+        if (collision.CompareTag("Platform") || collision.CompareTag("Spike") || collision.CompareTag("DoorPart") || collision.CompareTag("Portal"))
         {
             player.transform.position = transform.position;
             throwOrb.isAlive = false;

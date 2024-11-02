@@ -7,6 +7,11 @@ TagManager:
   - Platform
   - Spike
   - Canvas
+  - Door
+  - Button
+  - Portal
+  - Orb
+  - DoorPart
   layers:
   - Default
   - TransparentFX
