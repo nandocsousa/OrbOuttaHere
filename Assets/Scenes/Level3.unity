@@ -281,6 +281,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76f9d428f2581a3448aa5b1bd8184672, type: 3}
+--- !u!1 &302649812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5392345197528529048, guid: 76f9d428f2581a3448aa5b1bd8184672, type: 3}
+  m_PrefabInstance: {fileID: 302649811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &321832583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,6 +400,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb9509adfd92ad84f9259a9700c29b78, type: 3}
+--- !u!1 &573863424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5392345197528529048, guid: 76f9d428f2581a3448aa5b1bd8184672, type: 3}
+  m_PrefabInstance: {fileID: 1701715365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &682077710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,6 +2435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4409382110890607878, guid: aa082531b11ef26459467a8f0c952f8a, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 573863424}
     - target: {fileID: 6813072975172413194, guid: aa082531b11ef26459467a8f0c952f8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5
@@ -3130,6 +3144,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7959894156241494618, guid: d81e445b1a29fde4495099ddf115bc29, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 302649812}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

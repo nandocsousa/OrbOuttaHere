@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    private GameObject door;
+    [SerializeField] GameObject door;
     private DoorController doorController;
 
     private void Start()
     {
-        door = GameObject.FindWithTag("Door");
         doorController = door.GetComponent<DoorController>();
     }
 

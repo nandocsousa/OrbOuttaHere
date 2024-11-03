@@ -625,6 +625,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76f9d428f2581a3448aa5b1bd8184672, type: 3}
+--- !u!1 &683847726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5392345197528529048, guid: 76f9d428f2581a3448aa5b1bd8184672, type: 3}
+  m_PrefabInstance: {fileID: 683847725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &687573887
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4409382110890607878, guid: aa082531b11ef26459467a8f0c952f8a, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 683847726}
     - target: {fileID: 6813072975172413194, guid: aa082531b11ef26459467a8f0c952f8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
