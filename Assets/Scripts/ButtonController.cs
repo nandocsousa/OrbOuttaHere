@@ -12,7 +12,7 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Box"))
         {
             doorController.OpenDoor();
         }
@@ -20,7 +20,7 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Box"))
         {
             doorController.CloseDoor();
         }

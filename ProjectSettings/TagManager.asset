@@ -12,6 +12,7 @@ TagManager:
   - Portal
   - Orb
   - DoorPart
+  - Box
   layers:
   - Default
   - TransparentFX
