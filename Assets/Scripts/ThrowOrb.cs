@@ -25,11 +25,11 @@ public class ThrowOrb : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!isAlive)
+            if (!isAlive && movesCounter.CanMove())
             {
                 CloneAndThrow();
             }
-            else if (movesCounter.CanMove())
+            else if (isAlive && movesCounter.CanMove())
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 currentDirection = (targetPosition - cloneOrb.position).normalized;

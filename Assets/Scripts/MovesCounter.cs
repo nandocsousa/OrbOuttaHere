@@ -4,7 +4,7 @@ using TMPro;
 public class MovesCounter : MonoBehaviour
 {
     public int maxMoves = 5;
-    private int currentMoves = 0;
+    public int currentMoves = 0;
 
     public TextMeshProUGUI movesText;
 

@@ -65,6 +65,12 @@ public class OrbController : MonoBehaviour
                     player.transform.position = new Vector2(transform.position.x - unstuckDist, transform.position.y);
                     throwOrb.isAlive = false;
                 }
+                else
+                {
+                    Destroy(gameObject);
+                    player.transform.position = transform.position;
+                    throwOrb.isAlive = false;
+                }
             }
             else Debug.LogWarning("No tile found at the cell position: " + cellPosition);
         }
