@@ -44,6 +44,7 @@ public class ThrowOrb : MonoBehaviour
         if (isAlive)
         {
             MoveOrbTowardsTarget();
+            cloneOrb.transform.Rotate(0, 0, 8);
         }
     }
 
