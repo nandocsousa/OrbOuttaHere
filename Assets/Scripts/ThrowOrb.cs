@@ -15,10 +15,13 @@ public class ThrowOrb : MonoBehaviour
     private GameObject canvas;
     private MovesCounter movesCounter;
 
+    private Animator animator;
+
     private void Start()
     {
         canvas = GameObject.FindWithTag("Canvas");
         movesCounter = canvas.GetComponent<MovesCounter>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -28,6 +31,8 @@ public class ThrowOrb : MonoBehaviour
             if (!isAlive && movesCounter.CanMove())
             {
                 CloneAndThrow();
+
+                animator.SetBool("isThrowing", true);
             }
             else if (isAlive && movesCounter.CanMove())
             {
@@ -37,6 +42,7 @@ public class ThrowOrb : MonoBehaviour
                 movesCounter.IncrementMoves();
             }
         }
+        else animator.SetBool("isThrowing", false);
     }
 
     private void FixedUpdate()
