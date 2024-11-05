@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip death;
     public AudioClip damage;
     public AudioClip throwing;
+    public AudioClip teleport;
     public AudioClip door;
     public AudioClip box;
     public AudioClip wheelchair;

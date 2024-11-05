@@ -6,22 +6,19 @@ public class OrbController : MonoBehaviour
     private GameObject player;
     private ThrowOrb throwOrb;
 
+    private AudioManager audioManager;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         throwOrb = player.GetComponent<ThrowOrb>();
+        audioManager = GameObject.FindWithTag("Audio").GetComponent<AudioManager>();
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Platform"))
         {
-            /*
-            Destroy(gameObject);
-            player.transform.position = new Vector2(transform.position.x, transform.position.y + 0.3f);
-            throwOrb.isAlive = false;
-            */
-
             Tilemap tilemap = collision.GetComponent<Tilemap>();
             
             Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
@@ -73,12 +70,16 @@ public class OrbController : MonoBehaviour
                 }
             }
             else Debug.LogWarning("No tile found at the cell position: " + cellPosition);
+
+            audioManager.PlaySFX(audioManager.teleport);
         }
         else if (collision.CompareTag("Spike") || collision.CompareTag("DoorPart") || collision.CompareTag("Portal"))
         {
             Destroy(gameObject);
             player.transform.position = transform.position;
             throwOrb.isAlive = false;
+
+            audioManager.PlaySFX(audioManager.teleport);
         }
     }
 }
