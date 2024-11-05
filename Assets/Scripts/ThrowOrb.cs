@@ -17,11 +17,14 @@ public class ThrowOrb : MonoBehaviour
 
     private Animator animator;
 
+    private AudioManager audioManager;
+
     private void Start()
     {
         canvas = GameObject.FindWithTag("Canvas");
         movesCounter = canvas.GetComponent<MovesCounter>();
         animator = GetComponent<Animator>();
+        audioManager = GameObject.FindWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -33,6 +36,8 @@ public class ThrowOrb : MonoBehaviour
                 CloneAndThrow();
 
                 animator.SetBool("isThrowing", true);
+                audioManager.PlaySFX(audioManager.throwing);
+
             }
             else if (isAlive && movesCounter.CanMove())
             {

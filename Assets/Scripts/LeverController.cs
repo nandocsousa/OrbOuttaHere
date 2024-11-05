@@ -13,9 +13,12 @@ public class LeverController : MonoBehaviour
     [SerializeField] private GameObject door;
     private DoorController doorController;
 
+    private AudioManager audioManager;
+
     private void Start()
     {
         doorController = door.GetComponent<DoorController>();
+        audioManager = GameObject.FindWithTag("Audio").GetComponent<AudioManager>();
 
         DeactivateLever();
     }
@@ -25,6 +28,7 @@ public class LeverController : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.Space))
         {
             PullLever();
+            audioManager.PlaySFX(audioManager.door);
         }
     }
 

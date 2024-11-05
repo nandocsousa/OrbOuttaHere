@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isFacingRight = true;
 
+    private AudioManager audioManager;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioManager = GameObject.FindWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -22,6 +25,15 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
+        if (Mathf.Abs(horizontal) > 0.1f)
+        {
+            audioManager.PlayWheelchairSFX();
+        }
+        else
+        {
+            audioManager.StopWheelchairSFX();
+        }
 
         Flip();
         RestartLevel();
