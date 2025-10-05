@@ -66,7 +66,7 @@ public class ThrowOrb : MonoBehaviour
         targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         currentDirection = (targetPosition - (Vector2)transform.position).normalized;
 
-        cloneOrb.velocity = (targetPosition - (Vector2)transform.position).normalized * speed;
+        cloneOrb.linearVelocity = (targetPosition - (Vector2)transform.position).normalized * speed;
 
         isAlive = true;
 
